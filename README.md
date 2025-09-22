@@ -1,12 +1,13 @@
-## AI Emotion Classifier from Text
+# AI Emotion Classifier from Text
+### An NLP project for emotion detection from text
 
-This project, developed as my Final Year Project (FYP) for my university in 2025, predicts emotions (joy, sadness, anger, fear, love, surprise) from text inputs using machine learning. Built with Python, scikit-learn, and NLTK for text preprocessing, it includes a Jupyter notebook for model training/evaluation and a Streamlit app for interactive emotion prediction. This work showcases my skills in AI and Python for the AI/Python Intern role at FOREO.
+This project uses machine learning to classify emotions from text. The model identifies key emotions such as joy, sadness, anger, fear, love, and surprise. Developed with Python, scikit-learn, and NLTK, the project includes a Jupyter notebook for model training and a Streamlit application for interactive, real-time emotion prediction.
 
 ## Features
 
-- Text Preprocessing: Cleaning, stopword removal, and lemmatization using NLTK.
-- Models: Logistic Regression (0.89 accuracy) and Multinomial Naive Bayes (0.87 accuracy) for emotion classification.
-- Interactive Demo: Streamlit app for real-time emotion predictions with confidence scores and visualizations.
+- **Text Preprocessing**: Comprehensive text cleaning, stopword removal, and lemmatization using the NLTK library.
+- **Machine Learning Models**: Includes trained models (Logistic Regression, Multinomial Naive Bayes) with accuracies of 89% and 87% respectively.
+- **Interactive Application**: A Streamlit web app for predicting emotions from user input, complete with confidence scores and a data visualization bar chart.
 
 ## Project Structure
 
@@ -32,52 +33,57 @@ ai-emotion-classifier/
 
 ## Setup
 
-### Clone the Repository (or download ZIP):
-git clone https://github.com/yourusername/ai-emotion-classifier.git
-
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/ai-emotion-classifier.git
 cd ai-emotion-classifier
+```
 
-### Create a Virtual Environment:
+### 2. Create and Activate a Virtual Environment
+```bash
+# Windows
 python -m venv venv
+.\venv\Scripts\activate
 
-### Activate the Virtual Environment:
-Windows: .\venv\Scripts\activate
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
 
-macOS/Linux:source venv/bin/activate
-
-
-### Install Dependencies:
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-
-### Download NLTK Data:
-python -c "import nltk; nltk.download('stopwords'); nltk.download('wordnet')"
-
-
+### 4. Download NLTK Data
+Launch a Python interpreter and run the following commands:
+```python
+import nltk
+nltk.download('stopwords')
+nltk.download('wordnet')
+```
 
 ## Usage
 
-### Jupyter Notebook:
-Open ai_emotion_classifier.ipynb in Jupyter or Colab.
+### Using the Jupyter Notebook
+Open the ai_emotion_classifier.ipynb notebook in Jupyter or a similar environment. Run the cells to explore the data, preprocess the text, train the models, and evaluate their performance.
 
-Run cells to preprocess data/combined_emotion.csv, train models, and evaluate performance.
-
-
-### Streamlit App:
-Run the app:streamlit run app.py
-
-
-Open http://localhost:8501 in your browser.
-
-Enter text to predict emotions and view confidence scores with a bar chart.
-
-
+### Using the Streamlit App
+To launch the interactive web application, run the following command from your terminal:
+```bash
+streamlit run app.py
+```
+The application will open in your browser at http://localhost:8501, allowing you to enter text and get real-time emotion predictions.
 
 ## Example
-Input: "I am so happy today!"
-Output: Predicted Emotion: Joy 😊
+The model predicts the most likely emotion along with confidence scores.
 
-### Probabilities:
+### Example 1: Joy
+Input: "I am so happy today!"
+
+Output: Predicted Emotion: **Joy 😊**
+
+**Confidence Scores:**
 
 **Joy**: 0.3552
 
@@ -91,16 +97,28 @@ Output: Predicted Emotion: Joy 😊
 
 **Fear**: 0.0718
 
+### Example 2: Sadness
+Input: "I lost my phone and my keys."
+
+Output: Predicted Emotion: **Sadness 😔**
+
+**Confidence Scores:**
+
+**Sadness**: 0.4512
+
+**Anger**: 0.2205
+
+**Fear**: 0.1801
+
+**Surprise**: 0.0910
+
+**Love**: 0.0387
+
+**Joy:** 0.0185
+
 ## Dataset
-The combined_emotion.csv in the data/ folder contains text sentences labeled with emotions (joy, sadness, anger, fear, love, surprise). If not included in the repository, download it from [Google Drive link, if applicable, or contact me].
-
-## Notes
-
-- Developed as a university Final Year Project (2025) to demonstrate AI/ML proficiency.
-- Dependencies pinned in requirements.txt for compatibility.
-- Fixes applied: Preprocessing added to app.py predictions, notebook uses relative path (data/combined_emotion.csv), and "surprise" typo corrected.
-- Model files (emotion_model.pkl, tfidf_vectorizer.pkl) included for immediate use with the Streamlit app.
+The data/combined_emotion.csv file contains the dataset used for training, featuring text entries labeled with their corresponding emotions.
 
 ## License
 
-MIT License
+This project is licensed under the MIT License.
